@@ -1,0 +1,19 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "ccl-db",
+    "longName": "Tutorial-1-1",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "shortName": "tutor1",
+    "uuid": "1a691bc8-ffb6-4c85-9564-9c184fe47b31",
+    "versionCode": 1,
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": true
+    }
+}
