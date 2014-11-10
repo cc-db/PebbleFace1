@@ -10,15 +10,15 @@ static void update_time() {
   struct tm *tick_time = localtime(&temp);
 
   // Create a long-lived buffer
-  static char buffer[] = "00:00";
+  static char buffer[] = "00:00:00";
 
   // Write the current hours and minutes into the buffer
   if(clock_is_24h_style() == true) {
     // Use 24 hour format
-    strftime(buffer, sizeof("00:00"), "%H:%M", tick_time);
+    strftime(buffer, sizeof("00:00:00"), "%H:%M:%S", tick_time);
   } else {
     // Use 12 hour format
-    strftime(buffer, sizeof("00:00"), "%I:%M", tick_time);
+    strftime(buffer, sizeof("00:00:00"), "%I:%M:%S", tick_time);
   }
 
   // Display this time on the TextLayer
@@ -38,7 +38,7 @@ static void main_window_load(Window *window) {
   //text_layer_set_text(s_time_layer, "00:00");
   
   //improve the layout to be more like a watchface
-  text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
+  text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
   
   // create the text layer
@@ -84,7 +84,7 @@ static void init() {
   update_time();
   
   // Register with TickTimerService
-  tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
+  tick_timer_service_subscribe(SECOND_UNIT, tick_handler);
 }
 
 static void deinit() {
