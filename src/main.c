@@ -10,11 +10,11 @@ static void main_window_load(Window *window) {
   
   
   // create the text layer
-  s_time_layer = text_layer_create(GRect(0,40, 144, 90));
+  s_time_layer = text_layer_create(GRect(0,55, 144, 50));
   text_layer_set_overflow_mode(s_time_layer, GTextOverflowModeWordWrap);
   text_layer_set_background_color(s_time_layer, GColorClear);
   text_layer_set_text_color(s_time_layer, GColorWhite);
-  text_layer_set_text(s_time_layer, "phooey\non you\nLMP");
+  text_layer_set_text(s_time_layer, "00:00");
   
   //improve the layout to be more like a watchface
   text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
@@ -24,7 +24,7 @@ static void main_window_load(Window *window) {
   s_time_layer1 = text_layer_create(GRect(0, 85, 144, 50));
   text_layer_set_background_color(s_time_layer1, GColorClear);
   text_layer_set_text_color(s_time_layer1, GColorWhite);
-  text_layer_set_text(s_time_layer1, "phooey\non you\nLMP\nyou fool");
+  text_layer_set_text(s_time_layer1, "phooey\non you\nLMP");
   
   //improve the layout to be more like a watchface
   text_layer_set_font(s_time_layer1, fonts_get_system_font(FONT_KEY_GOTHIC_24_BOLD));
